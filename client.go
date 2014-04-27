@@ -4,6 +4,7 @@ import (
     "net"
     "fmt"
     "os"
+    "time"
 )
 
 type Client struct {
@@ -39,6 +40,16 @@ func (client *Client) Send(packet []byte) {
     fmt.Println(err.Error())
     os.Exit(1)
   }
+
+  _, err = conn.Write(packet)
+  if err != nil {
+    fmt.Println(err.Error())
+    os.Exit(1)
+  }
+
+  fmt.Println("sleeping")
+  time.Sleep(20 * time.Second)
+  fmt.Println("waking")
 
   _, err = conn.Write(packet)
   if err != nil {

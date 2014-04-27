@@ -1,0 +1,5 @@
+Simulating a connection-based, reliable communication between
+client and server, based on UDP. This is based on the tutorials
+of Glenn Fiedler, about networking for game programmers.
+
+http://gafferongames.com/networking-for-game-programmers
